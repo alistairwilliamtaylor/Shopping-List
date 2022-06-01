@@ -22,7 +22,7 @@ function App() {
 
     const crossOut = (indexOfItemToCrossOut: any) => {
         const newItems = items.map((item,index) => {
-            return index == indexOfItemToCrossOut ? crossoutItem(item) : item;
+            return index === indexOfItemToCrossOut ? crossoutItem(item) : item;
         })
         setItems(newItems);
     }
@@ -42,9 +42,9 @@ function App() {
     return (
         <body>
         <h1>My Shopping List</h1>
-          <form className="item-adder" onSubmit={(e) => handleSubmit(event)}>
+          <form className="item-adder" onSubmit={(event) => handleSubmit(event)}>
             <label>What would you like to add?</label>
-            <input className="user-input" type="text" onChange={(event) => setInputValue(event.target.value)}/>
+            <input className="user-input" type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)}/>
               <button className="add-button" onClick={() => handleAddButton()}>Add me!</button>
           </form>
         <section className="common-items">
