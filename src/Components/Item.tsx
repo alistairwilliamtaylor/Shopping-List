@@ -1,7 +1,8 @@
 import React from 'react';
-import {Button, Checkbox} from '@mui/material';
+import { Checkbox } from '@mui/material';
+import { ItemProps } from "../Interfaces/Interfaces";
 
-function Item({item, crossOut, index} : any) {
+function Item({item, crossOut, index}: ItemProps) {
 
 
     return (
@@ -10,10 +11,10 @@ function Item({item, crossOut, index} : any) {
                 {item.name}
             </label>
             <Checkbox disabled={item.crossed} className="tick" onChange={() => crossOut(index)} />
-            {/*<button disabled={item.crossed} className="tick" onClick={() => crossOut(index)}>Tick!</button>*/}
         </div>
     );
 }
+
 export default Item;
 
 

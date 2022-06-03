@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import InputBox from './Components/InputBox';
 import './App.css';
 import ShoppingList from "./Components/ShoppingList";
+import { Item } from "./Interfaces/Interfaces";
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     ]);
 
 
-    const AddNewItemToList = (itemName : any ) => {
+    const AddNewItemToList = (itemName: string) => {
+
         const newItem = {
             name: itemName,
             crossed: false,
@@ -21,14 +23,16 @@ function App() {
         setItems(newItems);
     }
 
-    const crossOut = (indexOfItemToCrossOut: any) => {
-        const newItems = items.map((item,index) => {
+    const crossOut = (indexOfItemToCrossOut: number) => {
+
+        const newItems = items.map((item, index) => {
             return index === indexOfItemToCrossOut ? crossoutItem(item) : item;
         })
+
         setItems(newItems);
     }
 
-    const crossoutItem = (oldItem : any) => {
+    const crossoutItem = (oldItem: Item) => {
             const newItem = {
             name: oldItem.name,
             crossed: true,
