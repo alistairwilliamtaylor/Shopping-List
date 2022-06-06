@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
+import { InputBoxProps } from "../Interfaces/Interfaces";
 
-
-function InputBox(props : any) {
+function InputBox({ addNewItemToList } : InputBoxProps) {
 
     const [inputValue, setInputValue] = useState('');
 
-    const handleAddButton = (e : any) => {
-        e.preventDefault();
-        props.AddNewItemToList(inputValue);
+    const handleAddButton = (event : React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+        addNewItemToList(inputValue);
         setInputValue("");
     }
 
@@ -15,7 +15,7 @@ function InputBox(props : any) {
         <form className="item-adder" >
             <label>What would you like to add?</label>
             <input className="user-input" type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)}/>
-            <button className="add-button" onClick={(e) => handleAddButton(e)}>Add me!</button>
+            <button className="add-button" onClick={handleAddButton}>Add me!</button>
         </form>
     );
 }

@@ -1,19 +1,20 @@
 import React from 'react';
-import {Button, Checkbox} from '@mui/material';
+import { Checkbox } from '@mui/material';
+import { ItemProps } from "../Interfaces/Interfaces";
 
-function Item({item, crossOut, index} : any) {
+function Item({item, crossOut, index}: ItemProps) {
 
 
     return (
-        <div className ="box">
-            <label className = {item.crossed ? "StrikeThrough" : "label"}>
+        <div className ="shopping-list-item">
+            <label className = {item.crossed ? "strike-through" : "label"}>
                 {item.name}
             </label>
             <Checkbox disabled={item.crossed} className="tick" onChange={() => crossOut(index)} />
-            {/*<button disabled={item.crossed} className="tick" onClick={() => crossOut(index)}>Tick!</button>*/}
         </div>
     );
 }
+
 export default Item;
 
 

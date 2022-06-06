@@ -12,10 +12,10 @@ h1 {
 .item-adder > input {
   margin: 10px;
 }
-.StrikeThrough {
+.strike-through {
   text-decoration: line-through;
 }
-.box {
+.shopping-list-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -26,7 +26,7 @@ h1 {
   padding: 20px 50px;
   background: white;
 }
-.common-items{
+.shopping-list{
   display: flex;
   align-items: center;
   flex-direction: column;
