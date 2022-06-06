@@ -6,7 +6,7 @@ function ShoppingList({items, crossOut}: ShoppingListProps) {
 
 
     return (
-        <section className="common-items">
+        <section className="shopping-list">
             {items.map((item : ItemType, index : number) => (
                 <Item item={item} crossOut ={crossOut} index={index}/>
             ))}

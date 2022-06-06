@@ -6,8 +6,8 @@ function Item({item, crossOut, index}: ItemProps) {
 
 
     return (
-        <div className ="box">
-            <label className = {item.crossed ? "StrikeThrough" : "label"}>
+        <div className ="shopping-list-item">
+            <label className = {item.crossed ? "strike-through" : "label"}>
                 {item.name}
             </label>
             <Checkbox disabled={item.crossed} className="tick" onChange={() => crossOut(index)} />

@@ -1,6 +1,10 @@
 export interface ItemType { crossed: boolean, name: string }
 
-export type crossOut = (index: number) => void
+type crossOut = (index: number) => void
+
+export interface InputBoxProps {
+    addNewItemToList: (itemName: string) => void
+}
 
 export interface ItemProps {
     item: ItemType,

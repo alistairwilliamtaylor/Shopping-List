@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import InputBox from './Components/InputBox';
 import './App.css';
 import ShoppingList from "./Components/ShoppingList";
-import { Item } from "./Interfaces/Interfaces";
+import { ItemType } from "./Interfaces/Interfaces";
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
     ]);
 
 
-    const AddNewItemToList = (itemName: string) => {
+    const addNewItemToList = (itemName: string) => {
 
         const newItem = {
             name: itemName,
@@ -32,7 +32,7 @@ function App() {
         setItems(newItems);
     }
 
-    const crossoutItem = (oldItem: Item) => {
+    const crossoutItem = (oldItem: ItemType) => {
             const newItem = {
             name: oldItem.name,
             crossed: true,
@@ -42,8 +42,8 @@ function App() {
 
     return (
         <body>
-        <h1>My Shopping List</h1>
-            <InputBox AddNewItemToList={AddNewItemToList}/>
+        <h1>My Shopping List</h1>git a
+            <InputBox addNewItemToList={addNewItemToList}/>
             <ShoppingList items={items} crossOut={crossOut}/>
         </body>
     );
