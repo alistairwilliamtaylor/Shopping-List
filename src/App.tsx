@@ -41,11 +41,11 @@ function App() {
     }
 
     return (
-        <body>
+        <>
         <h1>My Shopping List</h1>
             <InputBox addNewItemToList={addNewItemToList}/>
             <ShoppingList items={items} crossOut={crossOut}/>
-        </body>
+        </>
     );
 }
 
