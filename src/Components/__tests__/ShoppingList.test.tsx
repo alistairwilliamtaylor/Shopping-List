@@ -1,7 +1,6 @@
 import React from 'react';
 import { render, screen } from "@testing-library/react";
 import ShoppingList from "../ShoppingList";
-import {checkboxClasses} from "@mui/material";
 
 test('displays all items in the shopping list', () => {
 
