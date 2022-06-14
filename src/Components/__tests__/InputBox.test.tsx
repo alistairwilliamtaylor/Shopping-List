@@ -10,7 +10,7 @@ test('provides input box', () => {
     expect(inputBox).toBeInTheDocument();
 });
 
-test('input box contains text entered by user', async () => {
+test('input box contains text entered by user', () => {
 
     render(<InputBox addNewItemToList={() => true}/>);
     const inputBox = screen.getByRole('textbox');
@@ -19,7 +19,7 @@ test('input box contains text entered by user', async () => {
     expect(inputBox).toHaveValue('chocolate');
 });
 
-test('clears input box after user submits input', async () => {
+test('clears input box after user submits input', () => {
 
     render(<InputBox addNewItemToList={() => true}/>);
     const inputBox = screen.getByRole('textbox');

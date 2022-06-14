@@ -12,33 +12,19 @@ function App() {
 
 
     const addNewItemToList = (itemName: string) => {
-
-        const newItem = {
-            name: itemName,
-            crossed: false,
-        };
-
-        const newItems = [...items, newItem];
-
+        const newItems = [ ...items, { name: itemName, crossed: false} ];
         setItems(newItems);
     }
 
     const crossOut = (indexOfItemToCrossOut: number) => {
-
-        const newItems = items.map((item, index) => {
-            return index === indexOfItemToCrossOut ? crossoutItem(item) : item;
-        })
-
+        const newItems = items.map((item, index) => index === indexOfItemToCrossOut ? crossoutItem(item) : item)
         setItems(newItems);
     }
 
-    const crossoutItem = (oldItem: ItemType) => {
-            const newItem = {
-            name: oldItem.name,
-            crossed: true,
-            };
-        return newItem;
-    }
+    const crossoutItem = (oldItem: ItemType) => ({
+        name: oldItem.name,
+        crossed: true,
+    })
 
     return (
         <>

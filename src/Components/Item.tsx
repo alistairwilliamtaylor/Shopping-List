@@ -7,10 +7,10 @@ function Item({item, crossOut, index}: ItemProps) {
 
     return (
         <div className ="shopping-list-item">
-            <label className = {item.crossed ? "strike-through" : "label"}>
+            <label className={item.crossed ? "strike-through" : "label"} htmlFor={item.name}>
                 {item.name}
             </label>
-            <Checkbox disabled={item.crossed} className="tick" onChange={() => crossOut(index)} />
+            <Checkbox disabled={item.crossed} id={item.name} className="tick" onChange={() => crossOut(index)} />
         </div>
     );
 }
